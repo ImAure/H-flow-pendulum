@@ -4,13 +4,11 @@
 
 #define ARG_NUM 6
 
+typedef FILE file;
 typedef struct point {
     double q;
     double p;
 } point;
-typedef FILE file;
-
-point increment(double h, point state);
 
 point euler(double h, point state);
 
