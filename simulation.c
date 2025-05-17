@@ -58,6 +58,6 @@ int main(int argc, char *argv[ARG_NUM]) {
 point euler(double h, point state) {
     point newstate;
     newstate.q = state.q + h * state.p;
-    newstate.p = state.p - h * cos(state.q);
+    newstate.p = state.p - h * sin(state.q);
     return newstate;
 }
