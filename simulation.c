@@ -10,7 +10,12 @@ typedef struct point {
     double p;
 } point;
 
-point euler(double h, point state);
+point euler(double h, point state) {
+    point newstate;
+    newstate.q = state.q + h * state.p;
+    newstate.p = state.p - h * sin(state.q);
+    return newstate;
+}
 
 int main(int argc, char *argv[ARG_NUM]) {
     point state;
@@ -55,9 +60,4 @@ int main(int argc, char *argv[ARG_NUM]) {
     return 0;
 }
 
-point euler(double h, point state) {
-    point newstate;
-    newstate.q = state.q + h * state.p;
-    newstate.p = state.p - h * sin(state.q);
-    return newstate;
-}
+
